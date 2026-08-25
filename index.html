@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Sai Dharshini ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: #0b0014;
+    color: white;
+    text-align: center;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.card {
+    width: 100%;
+    max-width: 420px;
+    padding: 35px 25px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.08);
+    box-shadow: 0 0 35px rgba(255,105,180,0.25);
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+button {
+    margin-top: 25px;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 30px;
+    background: #ff4f9a;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.hidden {
+    display: none;
+}
+
+.envelope {
+    font-size: 80px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.letter {
+    background: #fff7ed;
+    color: #321b1b;
+    padding: 25px;
+    border-radius: 15px;
+    animation: openLetter 0.7s ease;
+}
+
+@keyframes openLetter {
+    from {
+        transform: rotateX(90deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotateX(0);
+        opacity: 1;
+    }
+}
+
+.small {
+    opacity: 0.75;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+
+<section class="page" id="page1">
+
+    <div class="card">
+
+        <div style="font-size:55px;">🎀</div>
+
+        <h1>Only the Birthday Girl Can Continue</h1>
+
+        <p>
+            This little surprise was made especially for you, Sai Dharshini. ❤️
+        </p>
+
+        <button onclick="showLetter()">
+            CONTINUE
+        </button>
+
+        <p class="small">
+            Only one special person is allowed beyond this point.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PAGE 2 -->
+
+<section class="page hidden" id="page2">
+
+    <div class="card">
+
+        <h1>💌 A Little Letter</h1>
+
+        <p>
+            A tiny surprise, made with a lot of thought,
+            just for you.
+        </p>
+
+        <div class="envelope" onclick="openLetter()">
+            ✉️
+        </div>
+
+        <div id="letterContent" class="letter hidden">
+
+            <h2>For Sai Dharshini ❤️</h2>
+
+            <p>
+                On this special day, I just wanted to give you
+                something made especially for you.
+            </p>
+
+            <p>
+                There are still many more surprises waiting ahead...
+            </p>
+
+        </div>
+
+        <button id="nextButton" class="hidden" onclick="showBalloons()">
+            CONTINUE
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- PAGE 3 -->
+
+<section class="page hidden" id="page3">
+
+    <div class="card">
+
+        <h1>🎈 One More Surprise</h1>
+
+        <p>
+            Pop all the balloons to find out what is waiting for you.
+        </p>
+
+        <div style="font-size:70px;">
+            🎈 🎈 🎈
+        </div>
+
+        <button onclick="showGiftBox()">
+            POP THE BALLOONS
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- PAGE 4 -->
+
+<section class="page hidden" id="page4">
+
+    <div class="card">
+
+        <div style="font-size:90px;">🎁</div>
+
+        <h1>A Gift Is Waiting...</h1>
+
+        <p>
+            But this is only the beginning. ❤️
+        </p>
+
+        <button onclick="alert('The magical keys are coming next! 🔑')">
+            OPEN GIFT
+        </button>
+
+    </div>
+
+</section>
+
+
+<script>
+
+function hideAllPages() {
+
+    document.querySelectorAll(".page").forEach(function(page) {
+        page.classList.add("hidden");
+    });
+
+}
+
+function showLetter() {
+
+    hideAllPages();
+
+    document.getElementById("page2").classList.remove("hidden");
+
+}
+
+function openLetter() {
+
+    document.getElementById("letterContent")
+        .classList.remove("hidden");
+
+    document.getElementById("nextButton")
+        .classList.remove("hidden");
+
+}
+
+function showBalloons() {
+
+    hideAllPages();
+
+    document.getElementById("page3").classList.remove("hidden");
+
+}
+
+function showGiftBox() {
+
+    hideAllPages();
+
+    document.getElementById("page4").classList.remove("hidden");
+
+}
+
+</script>
+
+</body>
+</html>
