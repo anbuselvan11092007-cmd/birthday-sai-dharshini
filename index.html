@@ -356,9 +356,9 @@ button:active {
         <p>A little surprise made just for you...</p>
     </div>
 
-    <button id="startButton">
-        START THE SURPRISE ✨
-    </button>
+    <button id="startButton" onclick="startSurprise()">
+    START THE SURPRISE ✨
+</button>
 
 </div>
 <img src="IMG-20260816-WA0034.jpg" alt="Birthday Photo" style="width:100%; max-width:500px; border-radius:15px;">
@@ -533,26 +533,22 @@ function showGiftBox() {
 }
 
 
-<script>
-window.addEventListener("load", function () {
 
-    const button = document.getElementById("startButton");
+<script>
+function startSurprise() {
     const opening = document.getElementById("openingScreen");
 
-    button.onclick = function () {
+    opening.style.transition = "opacity 1s ease, transform 1s ease";
+    opening.style.opacity = "0";
+    opening.style.transform = "scale(1.08)";
 
-        opening.style.opacity = "0";
-        opening.style.transform = "scale(1.08)";
-
-        setTimeout(function () {
-            opening.style.display = "none";
-        }, 1000);
-
-    };
-
-});
+    setTimeout(function() {
+        opening.style.display = "none";
+    }, 1000);
+}
 </script>
-
 
 </body>
 </html>
+
+
