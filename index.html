@@ -534,19 +534,25 @@ function showGiftBox() {
 
 
 <script>
-document.getElementById("startButton").addEventListener("click", function () {
+window.addEventListener("load", function () {
 
+    const button = document.getElementById("startButton");
     const opening = document.getElementById("openingScreen");
 
-    opening.style.transition = "opacity 1s ease, transform 1s ease";
-    opening.style.opacity = "0";
-    opening.style.transform = "scale(1.08)";
+    button.onclick = function () {
 
-    setTimeout(function () {
-        opening.style.display = "none";
-    }, 1000);
+        opening.style.opacity = "0";
+        opening.style.transform = "scale(1.08)";
+
+        setTimeout(function () {
+            opening.style.display = "none";
+        }, 1000);
+
+    };
 
 });
 </script>
+
+
 </body>
 </html>
