@@ -4,7 +4,245 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Sai Dharshini ❤️</title>
+.opening-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background:
+        radial-gradient(circle at center, #ff9dcc 0%, #ff5fa2 35%, #8f174f 100%);
+    animation: openingFade 1s ease;
+}
 
+.opening-screen::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle, rgba(255,255,255,0.25) 1px, transparent 2px);
+    background-size: 35px 35px;
+    animation: sparkleMove 8s linear infinite;
+    pointer-events: none;
+}
+
+.arrow-heart {
+    position: relative;
+    width: 180px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: heartFloat 2.5s ease-in-out infinite;
+    z-index: 2;
+}
+
+.big-heart {
+    font-size: 105px;
+    filter: drop-shadow(0 0 20px rgba(255,255,255,0.8));
+    animation: heartPulse 1.2s ease-in-out infinite;
+}
+
+.arrow {
+    position: absolute;
+    font-size: 65px;
+    transform: rotate(-15deg);
+    left: -45px;
+    top: 38px;
+    animation: arrowHit 2.8s ease-in-out infinite;
+}
+
+.opening-title {
+    position: relative;
+    z-index: 3;
+    margin-top: 10px;
+    text-shadow: 0 3px 15px rgba(0,0,0,0.25);
+}
+
+.opening-title h1 {
+    font-size: 34px;
+    margin: 5px 0;
+}
+
+.opening-title h2 {
+    font-size: 28px;
+    margin: 5px 0 12px;
+}
+
+.opening-title p {
+    font-size: 16px;
+    margin: 0;
+}
+
+#startButton {
+    position: relative;
+    z-index: 5;
+    margin-top: 28px;
+    padding: 15px 30px;
+    border: 2px solid rgba(255,255,255,0.7);
+    border-radius: 40px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 0 25px rgba(255,255,255,0.4);
+    backdrop-filter: blur(8px);
+    animation: buttonGlow 1.8s ease-in-out infinite;
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 28px;
+    animation: floatingHeart 5s linear infinite;
+    opacity: 0.8;
+}
+
+.heart1 {
+    left: 12%;
+    top: 25%;
+}
+
+.heart2 {
+    right: 12%;
+    top: 35%;
+    animation-delay: 1.5s;
+}
+
+.heart3 {
+    left: 20%;
+    bottom: 15%;
+    animation-delay: 3s;
+}
+
+.cat {
+    position: absolute;
+    font-size: 38px;
+    animation: catFloat 3s ease-in-out infinite;
+}
+
+.cat1 {
+    left: 7%;
+    bottom: 10%;
+}
+
+.cat2 {
+    right: 7%;
+    top: 12%;
+    animation-delay: 1s;
+}
+
+@keyframes arrowHit {
+    0% {
+        left: -75px;
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    45% {
+        left: 35px;
+    }
+
+    50% {
+        transform: rotate(-15deg) scale(1.15);
+    }
+
+    55% {
+        left: 35px;
+        transform: rotate(-15deg) scale(1);
+    }
+
+    100% {
+        left: -75px;
+        opacity: 0;
+    }
+}
+
+@keyframes heartPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+@keyframes heartFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes floatingHeart {
+    0% {
+        transform: translateY(30px) scale(0.8);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    80% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-120px) scale(1.2);
+        opacity: 0;
+    }
+}
+
+@keyframes catFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(3deg);
+    }
+}
+
+@keyframes buttonGlow {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+}
+
+@keyframes sparkleMove {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(35px);
+    }
+}
+
+@keyframes openingFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
 <style>
 * {
     box-sizing: border-box;
@@ -97,6 +335,31 @@ button:active {
 </head>
 
 <body>
+    <div id="openingScreen" class="opening-screen">
+
+    <div class="floating-heart heart1">💗</div>
+    <div class="floating-heart heart2">💕</div>
+    <div class="floating-heart heart3">💖</div>
+
+    <div class="cat cat1">🐱🎀</div>
+    <div class="cat cat2">🐱💗</div>
+
+    <div class="arrow-heart">
+        <div class="big-heart">❤️</div>
+        <div class="arrow">🏹</div>
+    </div>
+
+    <div class="opening-title">
+        <h1>Happy Birthday</h1>
+        <h2>Sai Dharshini ❤️</h2>
+        <p>A little surprise made just for you...</p>
+    </div>
+
+    <button id="startButton">
+        START THE SURPRISE ✨
+    </button>
+
+</div>
 <img src="IMG-20260816-WA0034.jpg" alt="Birthday Photo" style="width:100%; max-width:500px; border-radius:15px;">
 <!-- EXTRA 3 PHOTOS -->
 <div class="photo-gallery">
